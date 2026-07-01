@@ -306,7 +306,7 @@ struct get_index<From, Checker, T, Rest...>
 
     static const bool is_exact_match = is_same_upto_cv<T, From>();
     static const bool is_relaxed_match = relaxed_same<T, From>();
-    static const bool is_variant = is_variant<T>::value;
+    static const bool is_variant = utils::is_variant<T>::value;
     static const bool is_ud_match = Checker<T, From>::value;
     static const bool is_strict_ud_match = is_ud_match && !is_variant;
 
